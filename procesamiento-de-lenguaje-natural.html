@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Procesamiento de Lenguaje Natural | Machine Learning para Humanxs</title>
+  <meta name="description" content="Una introducción práctica al aprendizaje estadístico, también conocido por su nombre artístico de Machine Learning" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Procesamiento de Lenguaje Natural | Machine Learning para Humanxs" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Una introducción práctica al aprendizaje estadístico, también conocido por su nombre artístico de Machine Learning" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Procesamiento de Lenguaje Natural | Machine Learning para Humanxs" />
+  
+  <meta name="twitter:description" content="Una introducción práctica al aprendizaje estadístico, también conocido por su nombre artístico de Machine Learning" />
+  
+
+<meta name="author" content="Victoria O’Donnell y Antonio Vazquez Brust" />
+
+
+<meta name="date" content="2019-10-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mas-aprendizaje-supervisado.html"/>
+<link rel="next" href="aprendizaje-no-supervisado.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Machine Learning para Humanxs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>¿Para quién es esto?</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#antes-de-empezar"><i class="fa fa-check"></i>Antes de empezar</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#sobre-el-machine-learning"><i class="fa fa-check"></i><b>1.1</b> Sobre el Machine learning</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#que-es"><i class="fa fa-check"></i><b>1.1.1</b> ¿Qué es?</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#para-que-se-usa"><i class="fa fa-check"></i><b>1.1.2</b> ¿Para qué se usa?</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#esto-es-inteligencia-artificial"><i class="fa fa-check"></i><b>1.2</b> ¿Ésto es <em>Inteligencia Artificial</em>?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="machine-learning-en-accion.html"><a href="machine-learning-en-accion.html"><i class="fa fa-check"></i><b>2</b> Machine Learning en acción</a><ul>
+<li class="chapter" data-level="2.1" data-path="machine-learning-en-accion.html"><a href="machine-learning-en-accion.html#un-ejemplo-de-cabo-a-rabo-con-buen-algoritmo-para-empezar."><i class="fa fa-check"></i><b>2.1</b> Un ejemplo de cabo a rabo con buen algoritmo para empezar.</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html"><i class="fa fa-check"></i><b>3</b> Aprendizaje supervisado:</a><ul>
+<li class="chapter" data-level="3.1" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#guatisit"><i class="fa fa-check"></i><b>3.1</b> Guatisit</a></li>
+<li class="chapter" data-level="3.2" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#el-yeite-del-test-el-training-y-validation."><i class="fa fa-check"></i><b>3.2</b> El yeite del test, el training y validation.</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#n-fold."><i class="fa fa-check"></i><b>3.2.1</b> N Fold.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#aplicando-algos"><i class="fa fa-check"></i><b>3.3</b> Aplicando algos</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#linear-regression-learning"><i class="fa fa-check"></i><b>3.3.1</b> Linear regression learning</a></li>
+<li class="chapter" data-level="3.3.2" data-path="aprendizaje-supervisado.html"><a href="aprendizaje-supervisado.html#las-metricas-que-debes-saber-fscore-roc-pres-recall"><i class="fa fa-check"></i><b>3.3.2</b> Las métricas que debés saber: Fscore, ROC, Pres, Recall</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html"><i class="fa fa-check"></i><b>4</b> Más Aprendizaje supervisado</a><ul>
+<li class="chapter" data-level="4.1" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html#arboles-de-decision-y-la-forma-de-combinarlos."><i class="fa fa-check"></i><b>4.1</b> Arboles de decision y la forma de combinarlos.</a></li>
+<li class="chapter" data-level="4.2" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html#ensembles"><i class="fa fa-check"></i><b>4.2</b> Ensembles</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html#random-forest"><i class="fa fa-check"></i><b>4.2.1</b> Random Forest</a></li>
+<li class="chapter" data-level="4.2.2" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html#gbm"><i class="fa fa-check"></i><b>4.2.2</b> GBM</a></li>
+<li class="chapter" data-level="4.2.3" data-path="mas-aprendizaje-supervisado.html"><a href="mas-aprendizaje-supervisado.html#adaboost"><i class="fa fa-check"></i><b>4.2.3</b> Adaboost</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="procesamiento-de-lenguaje-natural.html"><a href="procesamiento-de-lenguaje-natural.html"><i class="fa fa-check"></i><b>5</b> Procesamiento de Lenguaje Natural</a></li>
+<li class="chapter" data-level="6" data-path="aprendizaje-no-supervisado.html"><a href="aprendizaje-no-supervisado.html"><i class="fa fa-check"></i><b>6</b> Aprendizaje no supervisado</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Machine Learning para Humanxs</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="procesamiento-de-lenguaje-natural" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> Procesamiento de Lenguaje Natural</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mas-aprendizaje-supervisado.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aprendizaje-no-supervisado.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["MLPH.pdf", "MLPH.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
